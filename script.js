@@ -44,16 +44,20 @@ currentDay.text(now);
 //     // Change time block color to green 
 // }
 
+// Current hour
+// var currentHour = moment().hour();
+
 // For loop that dynamically create time blocks
-for(var i =0; i < 12; i++){
+for(var i =0; i < 1; i++){
     // Create a row
     var row = $("<div>");
     row.addClass("row time-block");
     
     // Add the hour div to the row
     var hourDiv = $("<div>");
+    var startingHour = moment().hour(9).format("hA");
     hourDiv.addClass("col-sm-1 hour");
-    // hourDiv.text() // Will have time of day from moment.js in here
+    hourDiv.text(startingHour) // Will have time of day from moment.js in here
     row.append(hourDiv);
     
     // Add the text area to the row
