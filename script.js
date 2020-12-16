@@ -44,30 +44,33 @@ currentDay.text(now);
 //     // Change time block color to green 
 // }
 
-// Dynamically create time blocks
+// For loop that dynamically create time blocks
+for(var i =0; i < 12; i++){
+    // Create a row
+    var row = $("<div>");
+    row.addClass("row time-block");
+    
+    // Add the hour div to the row
+    var hourDiv = $("<div>");
+    hourDiv.addClass("col-sm-1 hour");
+    // hourDiv.text() // Will have time of day from moment.js in here
+    row.append(hourDiv);
+    
+    // Add the text area to the row
+    var textArea = $("<textarea>");
+    textArea.addClass("col-sm-10 description past"); // Will update depending on the hour of the day
+    row.append(textArea);
+    
+    // Add the save button to the row
+    var saveButton = $("<button>");
+    saveButton.addClass("col-sm-1 saveBtn");
+    saveButton.text("Save");
+    row.append(saveButton);
+    
+    // Add row to container
+    $(".container").append(row);
+}
 
-// Create a row
-var row = $("<div>");
-row.addClass("row time-block");
-
-// Add the hour div to the row
-var hourDiv = $("<div>");
-hourDiv.addClass("col-sm-1 hour");
-row.append(hourDiv);
-
-// Add the text area to the row
-var textArea = $("<textarea>");
-textArea.addClass("col-sm-10 description past"); // Will update depending on the hour of the day
-textArea.text("This is text")
-row.append(textArea);
-
-// Add the save button to the row
-var saveButton = $("<button>");
-saveButton.addClass("col-sm-1 saveBtn");
-row.append(saveButton);
-
-// Add row to container
-$(".container").append(row);
 
 
 // 1. Create an element
