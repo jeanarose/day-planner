@@ -16,7 +16,8 @@
 
 // DOM Variables:
 // Document ready
-$(document).ready(function () {
+$(document).ready(function(){
+
 // Container
 var container = $("#container");
 // Current day
@@ -28,12 +29,22 @@ var futureDay = $(".future");
 // Save button
 var saveButton = $(".saveBtn");
 
-// JavaScript Variables
+// Display currentDay in jumbotron using moment.js
+var nowObject = moment();
+var now = nowObject._d;
+console.log(now._d);
+currentDay.text(now);
+
 
 // Conditionals:
-// - Time blocks are color coded based on the hour of the day (conditional):
-    // - If the hour is present, the color is red. If else the hour is past, the color is grey. 
-    // Else, the color is green to represent future hours. 
+// - Time blocks are color coded based on the hour of the day (conditional)
+// if(){ // Hour is present
+//     // Change time block color to red
+// } else if () { // Hour is past
+//     // Change time block color to grey
+// } else { // Hour is future
+//     // Change time block color to green 
+// }
 
 // Event listeners :
 // - Click of the save button
@@ -42,4 +53,4 @@ var saveButton = $(".saveBtn");
 // Functions / Methods:
 // - When the save button is clicked, the text in the time block is saved to local storage
 
-}
+})
