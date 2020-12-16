@@ -15,12 +15,25 @@
 
 
 // DOM Variables:
-// - ID container
-// - ID current day 
-// - Classes present, past, and future 
-// - Class saveBtn
+// Document ready
+$(document).ready(function () {
+// Container
+var container = $("#container");
+// Current day
+var currentDay = $("#currentDay");
+// Present, past, and future time blocks
+var presentDay = $(".present");
+var pastDay = $(".past");
+var futureDay = $(".future");
+// Save button
+var saveButton = $(".saveBtn");
 
 // JavaScript Variables
+
+// Conditionals:
+// - Time blocks are color coded based on the hour of the day (conditional):
+    // - If the hour is present, the color is red. If else the hour is past, the color is grey. 
+    // Else, the color is green to represent future hours. 
 
 // Event listeners :
 // - Click of the save button
@@ -29,7 +42,4 @@
 // Functions / Methods:
 // - When the save button is clicked, the text in the time block is saved to local storage
 
-// Conditionals:
-// - Time blocks are color coded based on the hour of the day (conditional):
-    // - If the hour is present, the color is red. If else the hour is past, the color is grey. 
-    // Else, the color is green to represent future hours. 
+}
