@@ -18,8 +18,6 @@
 // Document ready
 $(document).ready(function(){
 
-// Container
-var container = $("#container");
 // Current day
 var currentDay = $("#currentDay");
 // Present, past, and future time blocks
@@ -45,6 +43,37 @@ currentDay.text(now);
 // } else { // Hour is future
 //     // Change time block color to green 
 // }
+
+// Dynamically create time blocks
+
+// Create a row
+var row = $("<div>");
+row.addClass("row time-block");
+
+// Add the hour div to the row
+var hourDiv = $("<div>");
+hourDiv.addClass("col-sm-1 hour");
+row.append(hourDiv);
+
+// Add the text area to the row
+var textArea = $("<textarea>");
+textArea.addClass("col-sm-10 description past"); // Will update depending on the hour of the day
+textArea.text("This is text")
+row.append(textArea);
+
+// Add the save button to the row
+var saveButton = $("<button>");
+saveButton.addClass("col-sm-1 saveBtn");
+row.append(saveButton);
+
+// Add row to container
+$(".container").append(row);
+
+
+// 1. Create an element
+// 2. Add content
+// 3. Append to an existing element (container)
+
 
 // Event listeners :
 // - Click of the save button
