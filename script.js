@@ -33,21 +33,10 @@ var now = nowObject._d;
 console.log(now._d);
 currentDay.text(now);
 
-
-// Conditionals:
-// - Time blocks are color coded based on the hour of the day (conditional)
-// if(){ // Hour is present
-//     // Change time block color to red
-// } else if () { // Hour is past
-//     // Change time block color to grey
-// } else { // Hour is future
-//     // Change time block color to green 
-// }
-
-// Current hour
-// var currentHour = moment().hour();
+// Sets the first hour of the day
 var hourNumber = 8;
-
+// Holds the current hour
+var currentHour = moment().format("hA");
 
 // For loop that dynamically create time blocks
 for(var i =0; i < 13; i++){
@@ -80,8 +69,18 @@ for(var i =0; i < 13; i++){
 
     // Increment hour number by one
     hourNumber++
-
 }
+
+// Conditionals:
+// - Time blocks are color coded based on the hour of the day (conditional)
+// if(){ // Hour is present
+//     // Change time block color to red
+// } else if () { // Hour is past
+//     // Change time block color to grey
+// } else { // Hour is future
+//     // Change time block color to green 
+// }
+
 
 
 
