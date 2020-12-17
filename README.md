@@ -1,7 +1,13 @@
 # Day Planner
 
 ## Description
-[Day Planner](https://jeanarose.github.io/day-planner/) 
+[Day Planner](https://jeanarose.github.io/day-planner/) is a simple web application designed to store important dates and information for the work day. Day Planner is useful because all inputs can be saved to local storage and therefore accessed by the user after the browser has been refreshed or closed. This application utilizes jQuery, DOM manipulation, Moment.js, Bootstrap, and event listeners to yield a responsive and dynamic product. The following components were used during the development of Day Planner:
+* jQuery DOM manipulation to create elements on the page, specifically each time block
+* Moment.js to display the date at the top of the page and the hours on each time block 
+* An event listener for each save button that when clicked, stores the text input to local storage 
+* Data attributes that were used to pair each text input to the time in local storage. This was critical in order to display each text input after the page is refreshed or the browser is closed.
+* A for loop to iterate over an array of hours to dynamically create each time block
+* Bootstrap design to ensure responsiveness 
 
 View the deployed application here: https://jeanarose.github.io/day-planner/
 
