@@ -3,7 +3,7 @@ $(document).ready(function () {
   var currentDay = $("#currentDay");
 
   // Display currentDay in jumbotron using moment.js
-  var now = moment().format("dddd, MMMM Do YYYY");
+  var now = moment().format("dddd, MMMM Do");
   currentDay.text(now);
 
   // Hour array
@@ -25,6 +25,7 @@ $(document).ready(function () {
     // Add the text area to the row
     var textArea = $("<textarea>");
     textArea.addClass("col-sm-10 description");
+    textArea.attr("style","color: black");
     textArea.data("hours", hoursArray[i]);
 
     if (localStorage.getItem(hoursArray[i]) !== null) {

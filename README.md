@@ -1,13 +1,16 @@
 # Day Planner
+[![GitHub issues](https://img.shields.io/github/issues/jeanarose/day-planner)](https://github.com/jeanarose/day-planner/issues)
 
 ## Description
 [Day Planner](https://jeanarose.github.io/day-planner/) is a simple web application designed to store important dates and information for the work day. Day Planner is useful because all inputs can be saved to local storage and therefore accessed by the user after the browser has been refreshed or closed. This application utilizes jQuery, DOM manipulation, Moment.js, Bootstrap, and event listeners to yield a responsive and dynamic product. The following components were used during the development of Day Planner:
+
 * jQuery DOM manipulation to create elements on the page, specifically each time block
+* A for loop to iterate over an array of hours to dynamically create each time block
 * Moment.js to display the date at the top of the page and the hours on each time block 
 * An event listener for each save button that when clicked, stores the text input to local storage 
-* Data attributes that were used to pair each text input to the time in local storage. This was critical in order to display each text input after the page is refreshed or the browser is closed.
-* A for loop to iterate over an array of hours to dynamically create each time block
+* Data attributes that were used to pair each text input to the time in local storage. This was critical in order to display each text input with the corresponding hour after the page is refreshed or the browser is closed.
 * Bootstrap design to ensure responsiveness 
+* Font Awesome to create the save button icon
 
 View the deployed application here: https://jeanarose.github.io/day-planner/
 
@@ -30,7 +33,7 @@ View the deployed application here: https://jeanarose.github.io/day-planner/
 5. Use the command **git clone [insert SSH key URL]** and click **Enter** (*Requires Git*).
 
 ## Usage
-
+Day Planner can be used to store and save dates, todos, or any work-day related information. Of great use is the visual change of the time blocks depending on if an event is past (grey), present (red), or future (green).
 
 ## Credits
 The following people contributed to the success of this application. You can view their GitHub profiles by clicking on their names:
