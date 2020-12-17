@@ -19,14 +19,12 @@ $(document).ready(function(){
 
 // DOM variables
 var currentDay = $("#currentDay");
-var saveButton = $(".saveBtn");
 
 // Display currentDay in jumbotron using moment.js
 var now = moment().format("dddd, MMMM Do YYYY");
 currentDay.text(now);
 
-// Hour variables
-
+// Hour array
 var hoursArray = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 // For loop that dynamically create time blocks
@@ -45,17 +43,15 @@ for(var i =0; i < hoursArray.length; i++){
     
     // Add the text area to the row
     var textArea = $("<textarea>");
-    textArea.addClass("col-sm-10 description"); // Will update depending on the hour of the day
+    textArea.addClass("col-sm-10 description"); 
+
+    // Changes the color of the text area depending on the time of day.
     if(moment().hour() === hoursArray[i]){ 
-        // Change time block color to red
         textArea.addClass("present");
-        console.log("you did it!")
     } else if (moment().hour() > hoursArray[i]){
         textArea.addClass("past");
-        console.log("this worked")
     } else {
         textArea.addClass("future");
-        console.log("this works too")
     }
     
     row.append(textArea);
@@ -69,30 +65,17 @@ for(var i =0; i < hoursArray.length; i++){
     $(".container").append(row);
 }
 
-// Conditionals:
-// - Time blocks are color coded based on the hour of the day (conditional)
-
-// else if (moment().hour < currentHour) { 
-//     // Change time block color to grey
-//     textArea.addClass("past");
-// } else { 
-//     // Change time block color to green 
-//     textArea.addClass("future");
-// }
-
-
-
-
-// 1. Create an element
-// 2. Add content
-// 3. Append to an existing element (container)
-
+// Functions / Methods:
+// - When the save button is clicked, the text in the time block is saved to local storage
+var saveButton = $(".saveBtn");
+var savedInformation = JSON.parse(localStorage.getItem("saved-info")) || [];
+function savePlanner(){
+    // Store textarea inputs to local storage
+    savedInformation.push($.trim($("textarea").val()))
+    localStorage.setItem("saved-info", JSON.stringify(savedInformation));
+}
 
 // Event listeners :
 // - Click of the save button
-// - Click into a time block? May just be an input
-
-// Functions / Methods:
-// - When the save button is clicked, the text in the time block is saved to local storage
-
+saveButton.on("click", savePlanner);
 })
