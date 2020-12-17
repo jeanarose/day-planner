@@ -74,7 +74,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## Tests
-
+Interested in testing Day Planner? Check the following:
+* When a text area is saved, the text persists after the page is refreshed and/or the browser is closed. 
+* The time block colors correspond to the following: past hours are grey, the present hour is red, and future hours are green.
+* If you wish to add more time blocks to the page, simply add more hours to the hoursArray using military time. 
 ---
 
 © 2020 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
