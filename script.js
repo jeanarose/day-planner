@@ -1,20 +1,3 @@
-// *** ACCEPTANCE CRITERIA ***
-// GIVEN I am using a daily planner to create a schedule
-// WHEN I open the planner
-// THEN the current day is displayed at the top of the calendar
-// WHEN I scroll down
-// THEN I am presented with time blocks for standard business hours
-// WHEN I view the time blocks for that day
-// THEN each time block is color-coded to indicate whether it is in the past, present, or future
-// WHEN I click into a time block
-// THEN I can enter an event
-// WHEN I click the save button for that time block
-// THEN the text for that event is saved in local storage
-// WHEN I refresh the page
-// THEN the saved events persist
-
-
-
 $(document).ready(function(){
 
 // DOM variables
@@ -46,6 +29,11 @@ for(var i =0; i < hoursArray.length; i++){
     textArea.addClass("col-sm-10 description"); 
     textArea.data("hours",hoursArray[i]);
 
+    if(localStorage.getItem(hoursArray[i]) !== null){
+        // Get item from local storage and display it on the page
+        textArea.text(localStorage.getItem(hoursArray[i]));
+    }
+
     // Changes the color of the text area depending on the time of day.
     if(moment().hour() === hoursArray[i]){ 
         textArea.addClass("present");
@@ -68,18 +56,18 @@ for(var i =0; i < hoursArray.length; i++){
 
 // Functions / Methods:
 // - When the save button is clicked, the text in the time block is saved to local storage
-var saveButton = $(".saveBtn");
-var savedInformation = JSON.parse(localStorage.getItem("saved-info")) || [];
-function savePlanner(){
+// var saveButton = $(".saveBtn");
+function savePlanner(event){
     // Store textarea inputs to local storage
-    savedInformation.push($.trim($("textarea").val()))
-    localStorage.setItem("saved-info", JSON.stringify(savedInformation));
-    // 
+    console.log($(this));
+    var text = $(this.previousElementSibling).val();
+    console.log(text);
+    var hours = $(this.previousElementSibling).data("hours");
+    localStorage.setItem(hours, text);
 }
 
-// Event listeners :
 // - Click of the save button
-saveButton.on("click", savePlanner);
+$(".container").on("click","button", savePlanner);
 })
 
 // Check to see if it's not not null
