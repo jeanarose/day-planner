@@ -44,6 +44,7 @@ for(var i =0; i < hoursArray.length; i++){
     // Add the text area to the row
     var textArea = $("<textarea>");
     textArea.addClass("col-sm-10 description"); 
+    textArea.data("hours",hoursArray[i]);
 
     // Changes the color of the text area depending on the time of day.
     if(moment().hour() === hoursArray[i]){ 
@@ -73,9 +74,13 @@ function savePlanner(){
     // Store textarea inputs to local storage
     savedInformation.push($.trim($("textarea").val()))
     localStorage.setItem("saved-info", JSON.stringify(savedInformation));
+    // 
 }
 
 // Event listeners :
 // - Click of the save button
 saveButton.on("click", savePlanner);
 })
+
+// Check to see if it's not not null
+// display what's in local storage
