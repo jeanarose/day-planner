@@ -7,6 +7,8 @@ View the deployed application here: https://jeanarose.github.io/day-planner/
 
 ## Day Planner
 
+![Screenshot of Day Planner webpage.](day-planner-screenshot.png)
+
 ## Table of Contents 
 * [Installation](#installation)
 * [Usage](#usage)
