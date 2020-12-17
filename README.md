@@ -31,6 +31,7 @@ The following people contributed to the success of this application. You can vie
 * [Jonathan Watson](https://github.com/jonathanjwatson)
 * [Pete Kriengsiri](https://github.com/pkriengsiri)
 * [Peter Colella](https://github.com/petercolella)
+* [Molly McCollum](https://github.com/mollymccollumwx)
 
 The following sites were used to find code to make Day Planner function properly:
 * [Font Awesome: ](https://fontawesome.com/icons/save?style=solid)Save button icon
