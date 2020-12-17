@@ -31,7 +31,12 @@ The following people contributed to the success of this application. You can vie
 * [Peter Colella](https://github.com/petercolella)
 
 The following sites were used to find code to make Day Planner function properly:
-* 
+* [Font Awesome: ](https://fontawesome.com/icons/save?style=solid)Save button icon
+* [Moment.js](https://momentjs.com/docs/)
+* [MDN: ](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)Local storage
+* [jQuery Documentation: ](https://api.jquery.com).attr() and .hover() methods
+* [Stack Overflow: ](https://stackoverflow.com/questions/24687431/using-jquery-attr-to-set-css).attr()
+* [Stack Overflow: ](https://stackoverflow.com/questions/25770590/change-color-when-hover-a-font-awesome-icon)Change Font Awesome icon color on hover
 
 ## License
 MIT License
