@@ -14,25 +14,23 @@
 // THEN the saved events persist
 
 
-// DOM Variables:
-// Document ready
+
 $(document).ready(function(){
-// Current day
+
+// DOM variables
 var currentDay = $("#currentDay");
-// Save button
 var saveButton = $(".saveBtn");
 
 // Display currentDay in jumbotron using moment.js
 var now = moment().format("dddd, MMMM Do YYYY");
 currentDay.text(now);
 
-// Sets the first hour of the day
-var hourNumber = 8;
-// Holds the current hour
-var currentHour = moment().format("hA");
+// Hour variables
+
+var hoursArray = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 // For loop that dynamically create time blocks
-for(var i =0; i < 13; i++){
+for(var i =0; i < hoursArray.length; i++){
 
     // Create a row
     var row = $("<div>");
@@ -40,41 +38,46 @@ for(var i =0; i < 13; i++){
     
     // Add the hour div to the row
     var hourDiv = $("<div>");
-    var hourDisplay = moment().hour(hourNumber).format("hA");
+    var hourDisplay = moment().set("hour", hoursArray[i]).format("hA");
     hourDiv.addClass("col-sm-1 hour");
     hourDiv.text(hourDisplay) // Will have time of day from moment.js in here
     row.append(hourDiv);
     
-    
     // Add the text area to the row
     var textArea = $("<textarea>");
     textArea.addClass("col-sm-10 description"); // Will update depending on the hour of the day
+    if(moment().hour() === hoursArray[i]){ 
+        // Change time block color to red
+        textArea.addClass("present");
+        console.log("you did it!")
+    } else if (moment().hour() > hoursArray[i]){
+        textArea.addClass("past");
+        console.log("this worked")
+    } else {
+        textArea.addClass("future");
+        console.log("this works too")
+    }
+    
     row.append(textArea);
     
     // Add the save button to the row
     var saveButton = $("<button>");
-    saveButton.addClass("col-sm-1 saveBtn");
-    saveButton.text("Save");
+    saveButton.addClass("col-sm-1 saveBtn fas fa-save");
     row.append(saveButton);
     
     // Add row to container
     $(".container").append(row);
-
-    // Increment hour number by one
-    hourNumber++
 }
 
 // Conditionals:
 // - Time blocks are color coded based on the hour of the day (conditional)
-// if($(".hour").text(currentHour)){ 
-//     // Change time block color to red
-//     // textArea.addClass("present");
-//     console.log("you did it!")
-// } 
-// else if () { // Hour is past
+
+// else if (moment().hour < currentHour) { 
 //     // Change time block color to grey
-// } else { // Hour is future
-    // Change time block color to green 
+//     textArea.addClass("past");
+// } else { 
+//     // Change time block color to green 
+//     textArea.addClass("future");
 // }
 
 
